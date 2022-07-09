@@ -5,15 +5,36 @@
 		"ms-vsliveshare.vsliveshare",
 		"matklad.rust-analyzer",
 		"serayuzgur.crates",
-		"vadimcn.vscode-lldb"
+		"vadimcn.vscode-lldb",
+		"golang.Go",
+		"grain-lang.vscode-grain",
+		"mutantdino.resourcemonitor",
+		"tamasfe.even-better-toml"
 	],
 	"dockerFile": "Dockerfile",
 	"settings": {
 		"editor.formatOnSave": true,
-		"terminal.integrated.shell.linux": "/usr/bin/zsh",
 		"files.exclude": {
 			"**/CODE_OF_CONDUCT.md": true,
 			"**/LICENSE": true
-		}
+		},
+		"lldb.executable": "/usr/bin/lldb",
+		// VS Code don't watch files under ./target
+		"files.watcherExclude": {
+			"**/target/**": true
+		},
+		"rust-analyzer.checkOnSave.command": "clippy",
+		"python.defaultInterpreterPath": "/usr/local/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
 	}
 }
