@@ -40,6 +40,3 @@ pip install mypy wasmtime
 # Install NPM dependencies
 printf "Installing NPM Dependencies"
 cd crates/gen-js && npm install
-
-# Install wit-bindgen CLI
-cargo install --git https://github.com/bytecodealliance/wit-bindgen wit-bindgen-cli --rev a79a4be33d76ddf62839ba71602c26a96610ef7c
