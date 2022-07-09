@@ -32,11 +32,3 @@ cp -R /root/.oh-my-zsh /home/$USERNAME
 cp /root/.zshrc /home/$USERNAME
 sed -i -e "s/\/root\/.oh-my-zsh/\/home\/$USERNAME\/.oh-my-zsh/g" /home/$USERNAME/.zshrc
 chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zshrc
-
-# Install Python stuff
-printf "Installing Python Dependencies"
-pip install mypy wasmtime
-
-# Install NPM dependencies
-printf "Installing NPM Dependencies"
-npm install

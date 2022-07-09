@@ -16,6 +16,9 @@ RUN bash ./setup.sh
 
 ENV PATH="/root/.cargo/bin:$PATH"
 
+# install python stuff
+RUN pip install mypy wasmtime
+
 # install wasi-sdk
 RUN cd /opt && curl -L https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-16/wasi-sdk-16.0-linux.tar.gz \
     | tar -xz
@@ -44,3 +47,6 @@ RUN curl -sL "$GRAIN_URL" -o /usr/local/bin/grain && chmod +x /usr/local/bin/gra
 ARG NODEJS_URL="https://nodejs.org/dist/v17.9.0/node-v17.9.0-linux-x64.tar.xz"
 RUN curl -sL "$NODEJS_URL" | tar -xJf - -C /usr/local --strip-components=1 --no-same-owner
 RUN npm install -g assemblyscript
+
+# Install other js dep
+RUN npm install
